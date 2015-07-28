@@ -10,7 +10,7 @@ $(document).ready(function(){
   		$(".overlay").fadeOut(1000);
   	});
 
-	$('nav ul').on('click', '.new', function() {
+	$('a.new').click(function() {
 		logIt("New Game button clicked.")
 		newGame(randomNum());
 	});
@@ -19,7 +19,7 @@ $(document).ready(function(){
 		logIt("number is: " + number);
 	}
 	function randomNum() {
-		num = Math.round((Math.random() * 100) + 1);
+		var num = Math.round((Math.random() * 100) + 1);
 		logIt("num is: " + num);
 		return num;
 	}
