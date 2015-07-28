@@ -12,8 +12,12 @@ $(document).ready(function(){
 
 	$('nav ul').on('click', '.new', function() {
 		logIt("New Game button clicked.")
-		// newGame(randomNum());
+		newGame(randomNum());
 	});
+	function newGame(number) {
+		logIt("In newGame function.");
+		logIt("number is: " + number);
+	}
 	function randomNum() {
 		num = Math.round((Math.random() * 100) + 1);
 		logIt("num is: " + num);
@@ -22,5 +26,5 @@ $(document).ready(function(){
 	function logIt(message) {
 		console.log(message);
 	}
-	randomNum();
+	newGame(randomNum());
 });
