@@ -23,6 +23,12 @@ $(document).ready(function(){
 		logIt("num is: " + num);
 		return num;
 	}
+    $('#guessButton').click(function() {
+        logIt("Guess button clicked.");
+        var guessNum = parseInt($("#guessButton").val());
+        logIt("guessNum is: " + guessNum);
+        // howClose(rndNum, guessNum);
+    });
 	function logIt(message) {
 		console.log(message);
 	}
