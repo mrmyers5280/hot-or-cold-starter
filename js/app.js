@@ -23,6 +23,13 @@ $(document).ready(function(){
         if ($('#guessButton').attr('disabled') === 'disabled') {
             $('#guessButton').removeAttr('disabled', '');
         }
+        // reset feedback
+        $('#feedback').text('Make your Guess!');
+        // reset guessed numbers
+        $('#guessList').empty();
+        // reset guesses count
+        guesses = 0;
+        $('#count').text(guesses);
     }
     function randomNum() {
         randNum = Math.floor((Math.random() * 100) + 1);
