@@ -35,17 +35,23 @@ $(document).ready(function(){
         if (guessDiff > 100) {
             alert("Your number is too large. Please pick a number between 1 and 100, including 1 and 100.")
         } else if ((guessDiff <= 100) && (guessDiff > 50)) {
-            logIt("ice cold");
+            logIt("Ice cold!");
+            $('#feedback').text('Ice cold!');
         } else if ((guessDiff <= 50) && (guessDiff > 30)) {
             logIt("cold");
+            $('#feedback').text('Cold');
         } else if ((guessDiff <= 30) && (guessDiff > 20)) {
             logIt("warm");
+            $('#feedback').text('Warm');
         } else if ((guessDiff <= 20) && (guessDiff > 10)) {
             logIt("hot");
+            $('#feedback').text('Hot!');
         } else if ((guessDiff <= 10) && (guessDiff >= 1)) {
             logIt("very hot");
+            $('#feedback').text('Very hot!');
         } else if (guessDiff === 0) {
             logIt("Congratulations, you got it!");
+            $('#feedback').text('Congratulations, you got it!');
         }
 
         // add number to user guessList.
