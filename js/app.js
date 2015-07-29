@@ -1,5 +1,6 @@
-
 $(document).ready(function(){
+
+    var randNum, guessNum;
 
 	/*--- Display information modal box ---*/
   	$(".what").click(function(){
@@ -19,15 +20,15 @@ $(document).ready(function(){
 		logIt("number is: " + number);
 	}
 	function randomNum() {
-		var num = Math.round((Math.random() * 100) + 1);
-		logIt("num is: " + num);
-		return num;
+		randNum = Math.floor((Math.random() * 100) + 1);
+		logIt("num is: " + randNum);
+		return randNum;
 	}
     $('#guessButton').click(function() {
         logIt("Guess button clicked.");
-        var guessNum = parseInt($("#guessButton").val());
+        guessNum = parseInt($("#userGuess").val(), 10);
         logIt("guessNum is: " + guessNum);
-        // howClose(rndNum, guessNum);
+        // howClose(randNum, guessNum);
     });
 	function logIt(message) {
 		console.log(message);
