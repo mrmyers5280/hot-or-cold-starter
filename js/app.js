@@ -18,6 +18,10 @@ $(document).ready(function(){
     function newGame(number) {
         logIt("In newGame function.");
         logIt("number is: " + number);
+        // enable the Guess button
+        if ($('#guessButton').attr('disabled') === 'disabled') {
+            $('#guessButton').removeAttr('disabled', '');
+        }
     }
     function randomNum() {
         randNum = Math.floor((Math.random() * 100) + 1);
@@ -52,6 +56,8 @@ $(document).ready(function(){
         } else if (guessDiff === 0) {
             logIt("Congratulations, you got it!");
             $('#feedback').text('Congratulations, you got it!');
+            $('#guessButton').attr('disabled', '');
+            alert('Great job! Click the New Game button to start over.');
         }
 
         // add number to user guessList.
