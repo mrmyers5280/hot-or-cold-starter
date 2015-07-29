@@ -1,6 +1,7 @@
 $(document).ready(function(){
 
     var randNum, guessNum;
+    var guesses = 0;
 
     /*--- Display information modal box ---*/
     $(".what").click(function(){
@@ -18,7 +19,7 @@ $(document).ready(function(){
     function newGame(number) {
         logIt("In newGame function.");
         logIt("number is: " + number);
-        // enable the Guess button
+        // enable the Guess button, if it's disabled
         if ($('#guessButton').attr('disabled') === 'disabled') {
             $('#guessButton').removeAttr('disabled', '');
         }
@@ -56,11 +57,15 @@ $(document).ready(function(){
         } else if (guessDiff === 0) {
             logIt("Congratulations, you got it!");
             $('#feedback').text('Congratulations, you got it!');
-            $('#guessButton').attr('disabled', '');
+            $('#guessButton').attr('disabled', ''); // disable the Guess button
             alert('Great job! Click the New Game button to start over.');
         }
-
-        // add number to user guessList.
+        guesses++;
+        logIt("guesses is: " + guesses);
+        // show number of guesses
+        $('#count').text(guesses);
+        // add guessed number to user guessList.
+        $('#guessList').append('<li>' + guessNum + '</li>');
     });
     function logIt(message) {
         console.log(message);
