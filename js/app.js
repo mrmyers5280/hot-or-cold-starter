@@ -25,6 +25,8 @@ $(document).ready(function(){
         }
         // reset feedback
         $('#feedback').text('Make your Guess!');
+        // reset userGuess text field
+        $('#userGuess').val('');
         // reset guessed numbers
         $('#guessList').empty();
         // reset guesses count
