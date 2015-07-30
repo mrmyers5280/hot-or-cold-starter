@@ -38,12 +38,11 @@ $(document).ready(function(){
         logIt("num is: " + randNum);
         return randNum;
     }
-    $('#guessButton').click(function() {
-        logIt("Guess button clicked.");
-        guessNum = parseInt($('#userGuess').val(), 10);
-        logIt("guessNum is: " + guessNum);
-        // howClose(randNum, guessNum);
+    function howClose(rndNum, guessNum) {
         // testing logic goes here.
+        logIt("In howClose function.");
+        logIt("rndNum is: " + rndNum);
+        logIt("guessNum is: " + guessNum);
         var guessDiff = Math.abs(guessNum - randNum);   // find the difference
         logIt("guessDiff is: " + guessDiff);
         if (guessDiff > 100) {
@@ -69,6 +68,13 @@ $(document).ready(function(){
             $('#guessButton').attr('disabled', ''); // disable the Guess button
             alert('Great job! Click the New Game button to start over.');
         }
+    }
+    $('#guessButton').click(function() {
+        logIt("Guess button clicked.");
+        guessNum = parseInt($('#userGuess').val(), 10);
+        logIt("guessNum is: " + guessNum);
+        howClose(randNum, guessNum);
+
         guesses++;
         logIt("guesses is: " + guesses);
         // show number of guesses
